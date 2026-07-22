@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: #0a0a0a;
+    color: #ffffff;
+    display: flex;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+main {
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
+    margin-bottom: 32px;
+}
+
+p {
+    color: #b5b5b5;
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    line-height: 1.6;
+}
