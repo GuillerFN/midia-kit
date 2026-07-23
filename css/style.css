@@ -1937,3 +1937,208 @@ main {
         line-height: 1.35;
     }
 }
+
+/* Título principal da capa totalmente branco */
+.hero__brand-white,
+.hero__brand-gray {
+    color: #ffffff;
+}
+
+/* ==================================================
+   VISUALIZAÇÕES SOBRE A IMAGEM DOS PROJETOS
+================================================== */
+
+.project-card__image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sombra inferior para a informação ficar legível */
+.project-card__image::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 42%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.68),
+        rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+}
+
+.project-card__views {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffffff;
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.project-card__views-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.project-card__content h3 {
+    min-height: 2.4em;
+    line-height: 1.2;
+}
+
+.project-card__views svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.project-card__views svg path,
+.project-card__views svg circle {
+    fill: none;
+    stroke: #ffffff;
+}
+
+/* Mantém a seta acima do degradê */
+.project-card__play {
+    z-index: 3;
+}
+
+/* Remove espaço que poderia ter ficado do número antigo */
+.project-card__content strong {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .project-card__views {
+        left: 14px;
+        bottom: 14px;
+        gap: 7px;
+    }
+
+    .project-card__views-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .project-card__views svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+    }
+}
+
+/* ==================================================
+   CARDS DAS MARCAS
+================================================== */
+
+.brand-card {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+}
+
+.brand-card__logo {
+    background: #ffffff;
+    border: 1px solid #cbcbcb;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.brand-card__time {
+    margin-top: 10px;
+    padding: 0;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .brands-grid {
+        gap: 12px;
+    }
+
+    .brand-card {
+        border-radius: 14px;
+    }
+
+    .brand-card__logo {
+        height: 105px;
+        padding: 18px;
+    }
+
+    .brand-card__time {
+        padding: 10px 6px 12px;
+        font-size: 0.66rem;
+        line-height: 1.3;
+    }
+}
+
+/* ==================================================
+   AJUSTE FINAL — CARDS DAS MARCAS
+================================================== */
+
+.brands-grid {
+    gap: 12px;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.brand-card {
+    background: transparent;
+    border: 0;
+    overflow: visible;
+}
+
+/* Força todos os cards a terem os quatro cantos */
+.brand-card .brand-card__logo,
+.brand-card:first-child .brand-card__logo,
+.brand-card:last-child .brand-card__logo,
+.brand-card:nth-child(1) .brand-card__logo,
+.brand-card:nth-child(2) .brand-card__logo,
+.brand-card:nth-child(7) .brand-card__logo {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Remove qualquer regra antiga de cantos específicos */
+.brand-card:first-child .brand-card__logo,
+.brand-card:last-child .brand-card__logo,
+.brand-card:nth-child(1) .brand-card__logo,
+.brand-card:nth-child(2) .brand-card__logo,
+.brand-card:nth-child(7) .brand-card__logo {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.brand-card__time {
+    margin-top: 10px;
+    padding: 0;
+    border: 0;
+    color: #9b9e9d;
+    text-align: center;
+}
+
+.hero__brand h1,
+.hero__brand h1 span,
+.hero__brand-white,
+.hero__brand-gray {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
