@@ -1866,3 +1866,74 @@ main {
         padding-right: 20px;
     }
 }
+
+/* ==================================================
+   AJUSTES MOBILE — FORMATOS E MARCAS
+================================================== */
+
+@media (max-width: 600px) {
+
+    /* ---------- FORMATOS ---------- */
+
+    .formats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .format-card {
+        aspect-ratio: auto;
+        min-height: 290px;
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .format-card h3 {
+        max-width: 100%;
+        margin: 0 0 14px;
+        font-size: clamp(1.25rem, 5.8vw, 1.55rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        overflow-wrap: anywhere;
+    }
+
+    .format-card p {
+        margin: 0;
+        font-size: 0.76rem;
+        line-height: 1.5;
+    }
+
+    .format-card > span {
+        font-size: 0.7rem;
+    }
+
+    /* ---------- MARCAS ---------- */
+
+    .brands-grid {
+        gap: 14px 10px;
+        overflow: visible;
+        border-radius: 0;
+    }
+
+    .brand-card {
+        overflow: visible;
+    }
+
+    .brand-card .brand-card__logo,
+    .brand-card:nth-child(1) .brand-card__logo,
+    .brand-card:nth-child(2) .brand-card__logo,
+    .brand-card:nth-child(7) .brand-card__logo {
+        border-radius: 14px;
+    }
+
+    .brand-card__logo {
+        height: 100px;
+        padding: 18px;
+    }
+
+    .brand-card__time {
+        padding-inline: 5px;
+        margin-top: 8px;
+        font-size: 0.66rem;
+        line-height: 1.35;
+    }
+}
