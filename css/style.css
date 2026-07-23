@@ -384,11 +384,12 @@ img {
 }
 
 .about {
+    align-items: stretch;
     display: grid;
-    gap: clamp(45px, 7vw, 100px);
+    gap: clamp(45px, 5vw, 80px);
     grid-template-columns:
-        minmax(320px, 0.9fr)
-        minmax(0, 1.1fr);
+        minmax(320px, 1fr)
+        minmax(0, 0.75fr);
 }
 
 .placeholder--portrait {
@@ -1068,7 +1069,7 @@ a:focus-visible {
             rgba(23, 23, 23, 0.7),
             transparent 52%
         ),
-        url("../assets/images/foto-capa.png");
+        url("../assets/images/foto-capa.jpeg");
 
     background-position: center;
     background-repeat: no-repeat;
@@ -1274,7 +1275,7 @@ a:focus-visible {
                 rgba(23, 23, 23, 0.78),
                 rgba(23, 23, 23, 0.06) 62%
             ),
-            url("../assets/images/foto-capa.png");
+            url("../assets/images/foto-capa.jpeg");
 
         background-position: center;
         border-radius: 22px;
@@ -1379,5 +1380,489 @@ a:focus-visible {
 
     .hero-card {
         bottom: 27%;
+    }
+}
+
+.about {
+    align-items: stretch;
+}
+
+.about {
+    align-items: start;
+    display: grid;
+    gap: clamp(40px, 4vw, 70px);
+    grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(360px, 1fr);
+}
+
+.about__photo {
+    align-self: start;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    width: 100%;
+}
+
+.about__photo img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+    width: 100%;
+}
+
+.about__content {
+    align-self: start;
+}
+
+@media (max-width: 800px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about__photo {
+        aspect-ratio: 4 / 5;
+    }
+
+    .about__photo img {
+        object-position: center top;
+    }
+}
+
+/* ==================================================
+   PROJETOS — 4 REELS LADO A LADO
+================================================== */
+
+.projects-grid {
+    display: grid;
+    gap: clamp(14px, 1.6vw, 24px);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-card {
+    min-width: 0;
+}
+
+.project-card__link {
+    display: block;
+}
+
+.project-card__image {
+    aspect-ratio: 9 / 8;
+    background: var(--color-gray-light);
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card__image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+    width: 100%;
+}
+
+.project-card__play {
+    align-items: center;
+    background: var(--color-background);
+    border-radius: 999px;
+    bottom: 14px;
+    color: var(--color-dark);
+    display: flex;
+    font-size: 0.85rem;
+    height: 38px;
+    justify-content: center;
+    position: absolute;
+    right: 14px;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    width: 38px;
+}
+
+.project-card__content {
+    padding: 16px 2px 4px;
+}
+
+.project-card__type {
+    color: var(--color-gray);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1.4;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+}
+
+.project-card__content h3 {
+    font-size: clamp(1rem, 1.35vw, 1.45rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+}
+
+.project-card__content strong {
+    color: var(--color-dark-soft);
+    display: block;
+    font-size: 0.76rem;
+    margin-top: 12px;
+}
+
+.project-card__link:hover .project-card__image img {
+    transform: scale(1.035);
+}
+
+.project-card__link:hover .project-card__play {
+    background: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+/* Tablet: 2 por linha */
+
+@media (max-width: 1050px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celular: 1 por linha, imagem mais curta */
+
+@media (max-width: 600px) {
+    .projects-grid {
+        gap: 38px;
+        grid-template-columns: 1fr;
+    }
+
+    .project-card__image {
+        aspect-ratio: 9 / 8;
+    }
+
+    .project-card__content {
+        padding-top: 14px;
+    }
+
+    .project-card__content h3 {
+        font-size: 1.35rem;
+    }
+}
+
+/* ==================================================
+   MARCAS PARCEIRAS — 7 BLOCOS
+================================================== */
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.brand-card {
+    min-width: 0;
+    text-align: center;
+}
+
+.brand-card__logo {
+    align-items: center;
+    background: #ffffff;
+    display: flex;
+    height: 112px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 22px;
+}
+
+.brand-card__logo img {
+    display: block;
+    height: auto;
+    max-height: 62px;
+    max-width: 92%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    width: auto;
+}
+
+.brand-card__time {
+    color: var(--color-gray);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    margin-top: 10px;
+    padding-inline: 4px;
+}
+
+.brand-card:hover .brand-card__logo img {
+    transform: scale(1.05);
+}
+
+/* Cantos externos no desktop */
+
+.brand-card:first-child .brand-card__logo {
+    border-radius: 14px 0 0 14px;
+}
+
+.brand-card:last-child .brand-card__logo {
+    border-radius: 0 14px 14px 0;
+}
+
+/* ==================================================
+   TABLET — 4 + 3
+================================================== */
+
+@media (max-width: 1050px) {
+    .brands-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-radius: 14px;
+    }
+
+    .brand-card__logo {
+        height: 104px;
+    }
+
+    .brand-card .brand-card__logo {
+        border-radius: 0;
+    }
+
+    .brand-card:nth-child(1) .brand-card__logo {
+        border-radius: 14px 0 0 0;
+    }
+
+    .brand-card:nth-child(4) .brand-card__logo {
+        border-radius: 0 14px 0 0;
+    }
+
+    .brand-card:nth-child(5) .brand-card__logo {
+        border-radius: 0 0 0 14px;
+    }
+
+    .brand-card:nth-child(7) .brand-card__logo {
+        border-radius: 0 0 14px 0;
+    }
+}
+
+/* ==================================================
+   CELULAR — 2 COLUNAS
+================================================== */
+
+@media (max-width: 600px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-radius: 12px;
+    }
+
+    .brand-card__logo {
+        height: 92px;
+        padding: 18px;
+    }
+
+    .brand-card__logo img {
+        max-height: 38px;
+        max-width: 72%;
+    }
+
+    .brand-card__time {
+        font-size: 0.64rem;
+        margin-top: 8px;
+    }
+
+    .brand-card .brand-card__logo {
+        border-radius: 0;
+    }
+
+    .brand-card:nth-child(1) .brand-card__logo {
+        border-radius: 12px 0 0 0;
+    }
+
+    .brand-card:nth-child(2) .brand-card__logo {
+        border-radius: 0 12px 0 0;
+    }
+
+    .brand-card:nth-child(7) .brand-card__logo {
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+/* ==================================================
+   FORMATOS DE CONTEÚDO — CARDS QUADRADOS
+================================================== */
+
+.formats-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.format-card {
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 24px;
+}
+
+.format-card__number {
+    color: var(--color-gray);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+}
+
+.format-card__content h3 {
+    font-size: clamp(1.35rem, 1.7vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.format-card__content p {
+    color: var(--color-gray);
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+/* Tablet */
+
+@media (max-width: 1200px) {
+    .formats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .format-card {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+    .formats-grid {
+        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .format-card {
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        padding: 18px;
+    }
+
+    .format-card__content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+    }
+
+    .format-card__content p {
+        font-size: 0.65rem;
+        line-height: 1.35;
+    }
+}
+
+/* ==================================================
+   LAYOUT EDITORIAL — BLOCOS ARREDONDADOS
+   Regras finais: mantê-las no fim do arquivo.
+================================================== */
+
+:root {
+    --layout-gap: 14px;
+    --layout-radius: 24px;
+    --surface-white: #ffffff;
+}
+
+/* Fundo contínuo claro */
+body,
+main {
+    background: var(--color-background);
+}
+
+/* Seções comuns permanecem integradas ao fundo */
+.section {
+    position: relative;
+}
+
+/* Painéis claros destacados, como na referência */
+.section--panel {
+    background: var(--surface-white);
+    border: 1px solid rgba(49, 49, 48, 0.06);
+    border-radius: var(--layout-radius);
+    margin:
+        var(--layout-gap)
+        var(--layout-gap)
+        calc(var(--layout-gap) * 2);
+    overflow: hidden;
+}
+
+/* Blocos escuros realmente separados do fundo */
+.section--dark {
+    background: var(--color-dark);
+    border-radius: var(--layout-radius);
+    margin:
+        var(--layout-gap)
+        var(--layout-gap)
+        calc(var(--layout-gap) * 2);
+    overflow: hidden;
+}
+
+/* Garante respiro entre as seções que não são blocos */
+.section--light:not(.section--panel),
+.section--brands {
+    background: transparent;
+}
+
+/* Evita que o conteúdo encoste nos blocos seguintes */
+.section--projects {
+    padding-bottom: clamp(100px, 9vw, 145px);
+}
+
+/* Contato no mesmo sistema visual da capa */
+.contact {
+    border-radius: var(--layout-radius);
+    margin:
+        var(--layout-gap)
+        var(--layout-gap)
+        var(--layout-gap);
+    overflow: hidden;
+}
+
+/* Rodapé volta para o fundo claro */
+.footer {
+    background: var(--color-background);
+    border-top: 0;
+    color: var(--color-gray);
+}
+
+/* Remove possíveis efeitos antigos incompatíveis */
+.section--projects {
+    background: var(--surface-white);
+}
+
+.section--panel .audience-card {
+    background: var(--color-background);
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+    :root {
+        --layout-gap: 12px;
+        --layout-radius: 20px;
+    }
+
+    .section--panel,
+    .section--dark,
+    .contact {
+        margin-left: var(--layout-gap);
+        margin-right: var(--layout-gap);
+    }
+
+    .section--panel,
+    .section--dark {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
