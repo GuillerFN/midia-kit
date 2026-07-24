@@ -813,6 +813,7 @@ img {
 
 .logo--footer {
     font-size: 1.5rem;
+    color: #9b9e9d;
 }
 
 .footer > a:last-child {
@@ -2141,4 +2142,304 @@ main {
     color: #ffffff !important;
     opacity: 1 !important;
     -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Marcas dentro do bloco escuro */
+.section--brands.section--dark {
+    color: #171717;
+}
+
+.section--brands.section--dark .section__intro h2 {
+    color: #171717;
+}
+
+.section--brands.section--dark .section-label span,
+.section--brands.section--dark .section-label p {
+    color: #9b9e9d;
+}
+
+.section--brands.section--dark .brand-card__logo {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+}
+
+.section--brands.section--dark .brand-card__time {
+    color: #9b9e9d;
+}
+
+/* ==================================================
+   MARCAS — CARD ÚNICO, BRANCO E SEM DIVISÃO
+================================================== */
+
+.section--brands.section--dark .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    overflow: visible;
+}
+
+.section--brands.section--dark .brand-card,
+.section--brands.section--dark .brand-card:first-child,
+.section--brands.section--dark .brand-card:last-child,
+.section--brands.section--dark .brand-card:nth-child(1),
+.section--brands.section--dark .brand-card:nth-child(2),
+.section--brands.section--dark .brand-card:nth-child(7) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    min-height: 290px;
+    padding: 24px 18px 20px;
+
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Área do logo integrada ao mesmo card */
+.section--brands.section--dark .brand-card__logo,
+.section--brands.section--dark .brand-card:first-child .brand-card__logo,
+.section--brands.section--dark .brand-card:last-child .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(1) .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(2) .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(7) .brand-card__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    width: 100%;
+    min-height: 190px;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+/* Logos */
+.section--brands.section--dark .brand-card__logo img {
+    display: block;
+    width: 100%;
+    max-width: 125px;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+/* Texto integrado ao card */
+.section--brands.section--dark .brand-card__time {
+    margin: 0;
+    padding: 16px 4px 0;
+
+    background: transparent;
+    border: 0;
+
+    color: #9b9e9d;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    text-align: center;
+}
+
+/* ==================================================
+   CORREÇÃO MOBILE — MARCAS
+================================================== */
+
+@media (max-width: 600px) {
+    .section--brands.section--dark .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .section--brands.section--dark .brand-card,
+    .section--brands.section--dark .brand-card:first-child,
+    .section--brands.section--dark .brand-card:last-child,
+    .section--brands.section--dark .brand-card:nth-child(1),
+    .section--brands.section--dark .brand-card:nth-child(2),
+    .section--brands.section--dark .brand-card:nth-child(7) {
+        width: 100%;
+        min-width: 0;
+        min-height: 210px;
+        padding: 18px 14px 16px;
+
+        border: 1px solid #e5e5e5;
+        border-radius: 16px;
+    }
+
+    .section--brands.section--dark .brand-card__logo,
+    .section--brands.section--dark .brand-card:first-child .brand-card__logo,
+    .section--brands.section--dark .brand-card:last-child .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(1) .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(2) .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(7) .brand-card__logo {
+        width: 100%;
+        min-height: 135px;
+        padding: 10px;
+    }
+
+    .section--brands.section--dark .brand-card__logo img {
+        width: 100%;
+        max-width: 105px;
+        max-height: 56px;
+        object-fit: contain;
+    }
+
+    .section--brands.section--dark .brand-card__time {
+        width: 100%;
+        margin: 0;
+        padding: 12px 2px 0;
+
+        font-size: 0.68rem;
+        line-height: 1.3;
+        text-align: center;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    /* Último card centralizado quando sobrar sozinho */
+    .section--brands.section--dark .brand-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        justify-self: center;
+    }
+}
+
+/* ==================================================
+   MARCAS — CARDS EDITORIAIS
+================================================== */
+
+.section--brands.section--dark .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Card branco, menor e arredondado */
+.section--brands.section--dark .brand-card,
+.section--brands.section--dark .brand-card:first-child,
+.section--brands.section--dark .brand-card:last-child,
+.section--brands.section--dark .brand-card:nth-child(1),
+.section--brands.section--dark .brand-card:nth-child(2),
+.section--brands.section--dark .brand-card:nth-child(7) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    min-height: 300px;
+    padding: 24px 18px 20px;
+
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Remove o texto PARTNER criado anteriormente */
+.section--brands.section--dark .brand-card::before {
+    content: none;
+    display: none;
+}
+
+/* Área do logo integrada ao card */
+.section--brands.section--dark .brand-card__logo,
+.section--brands.section--dark .brand-card:first-child .brand-card__logo,
+.section--brands.section--dark .brand-card:last-child .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(1) .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(2) .brand-card__logo,
+.section--brands.section--dark .brand-card:nth-child(7) .brand-card__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    width: 100%;
+    min-height: 205px;
+    padding: 0;
+
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+/* Logos maiores e centralizados */
+.section--brands.section--dark .brand-card__logo img {
+    display: block;
+    width: 100%;
+    max-width: 155px;
+    max-height: 85px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Texto inferior mais claro */
+.section--brands.section--dark .brand-card__time {
+    width: 100%;
+    margin: 0;
+    padding: 18px 0 2px;
+
+    background: transparent;
+    border: 0;
+
+    color: #b5b7b6;
+    font-size: 0.68rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .section--brands.section--dark .brands-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px;
+    }
+
+    .section--brands.section--dark .brand-card,
+    .section--brands.section--dark .brand-card:first-child,
+    .section--brands.section--dark .brand-card:last-child,
+    .section--brands.section--dark .brand-card:nth-child(1),
+    .section--brands.section--dark .brand-card:nth-child(2),
+    .section--brands.section--dark .brand-card:nth-child(7) {
+        min-height: 225px;
+        padding: 18px 14px 16px;
+        border-radius: 16px;
+    }
+
+    .section--brands.section--dark .brand-card__logo,
+    .section--brands.section--dark .brand-card:first-child .brand-card__logo,
+    .section--brands.section--dark .brand-card:last-child .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(1) .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(2) .brand-card__logo,
+    .section--brands.section--dark .brand-card:nth-child(7) .brand-card__logo {
+        min-height: 150px;
+    }
+
+    .section--brands.section--dark .brand-card__logo img {
+        max-width: 125px;
+        max-height: 68px;
+    }
+
+    .section--brands.section--dark .brand-card__time {
+        padding-top: 14px;
+        font-size: 0.65rem;
+        color: #b8bab9;
+    }
+
+    /* Última marca centralizada */
+    .section--brands.section--dark .brand-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header .logo {
+        color: #dedfdf;
+    }
 }
